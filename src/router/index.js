@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import listProducts from '@/components/listProducts'
+import list from '@/components/list'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/listProduct',
-      name: 'listProduct',
-      component: listProducts
-    }
-  ]
+    routes: [
+        {
+            path: '/listStudent',
+            name: 'listStudent',
+            component: list
+        }
+    ]
 })

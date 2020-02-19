@@ -1,29 +1,43 @@
 <template>
   <div>
     <div class="container">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">age</th>
-            <th scope="col">address</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- <div v-if="studentObjData.length"> -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">age</th>
+              <th scope="col">address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="productObj in studentObjData" :key="productObj.id">
+              <th>{{productObj.name}}</th>
+              <td>{{productObj.age}}</td>
+              <td>{{productObj.address}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ... mapGetters(["studentObjData"]),
+     data: {
+      set(value) {
+        console.log(value);
+      },
+      get() {
+        return this.studentObjData;
+      }
+    }
+  }
+};
 </script>
 
 <style>

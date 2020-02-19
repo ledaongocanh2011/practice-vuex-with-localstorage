@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
-    <router-link :to="{ name: 'listProduct' }">listProduct</router-link>
+    <router-link :to="{ name: 'listStudent' }">list Students</router-link>
     <router-view />
   </div>
 </template>
 
 <script>
-import listProducts from "./components/listProducts";
+import list from "./components/list";
 export default {
   name: "App",
   components: {
-    listProducts
+    list
   }
 };
 </script>
